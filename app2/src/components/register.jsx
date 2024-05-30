@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate,Link } from "react-router-dom";
-import register from "../Services/admin";
+import { register } from "../Services/admin";
+
 
 function Register() {
     const [firstName, setFirstName] = useState('');
@@ -9,9 +10,10 @@ function Register() {
     const [password, setPassword] = useState('');
     const [ConfirmPassword, setConfirmPassword] = useState('');
 
-    const navigate=useNavigate( )
+    const navigate=useNavigate()
 
     const onRegister = async () => {
+        
         if (firstName.length == 0)
             alert('enter valid name')
         else if (email == 0)
@@ -27,23 +29,25 @@ function Register() {
             // console.log(`firstName=${firstName}`)
             // console.log(`lastName=${lastName}`)
             const result= await register(firstName,lastName,email,password)
+            console.log(result);
             if(result['status']=='success'){
+                console.log("success");
                 <div>Admin registered successfully</div>
-                navigate('/login')            
+                navigate('/')            
             }
         }
     }
     return (
         <div className="page-header ">
-            <div class="container text-center">
+            <div className="container text-center">
                 <div className="mb3 ">
                     <h2>Register</h2>
                 </div>
-                <div class="row">
-                    <div class="col">
+                <div className="row">
+                    <div className="col">
 
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <div className="from mt3">
 
                             <div className="mb-3">
@@ -77,7 +81,7 @@ function Register() {
 
                     </div>
                     
-                    <div class="col">
+                    <div className="col">
                     </div>
                 </div>
             </div>

@@ -5,13 +5,16 @@ import Register from './components/register';
 import Home from './components/home';
 import Properties from './components/properties';
 import { Route, Routes } from 'react-router-dom';
+import AddProperties from './components/addProperties';
 
 function App() {
   return (
   <div className='container'>
     <Routes>
-      <Route path='login' element={<Login/>}/>
+      <Route path='' element={<Login/>}/>
       <Route path='register' element={<Register/>}/>
+      <Route path='properties' element={<Properties/>}/>
+      <Route path='addproperties' element={<AddProperties/>}/>
     </Routes>
   </div>
 

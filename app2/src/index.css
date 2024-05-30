@@ -17,4 +17,12 @@ code {
     margin: 10px;
 }
 
+.navbar{
+  background-color: rgb(182, 83, 83);
+}
+
+.dashboard{
+  height: 100px;
+  width: 100px;
+}
 
